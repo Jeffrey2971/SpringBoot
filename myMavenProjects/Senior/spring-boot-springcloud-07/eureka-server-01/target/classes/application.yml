@@ -1,0 +1,24 @@
+server:
+  port: 8761
+eureka:
+  instance:
+    # eureka 实例的主机名
+    hostname: eureka-server
+  client:
+    # 不把自己注册到 eureka 上
+    register-with-eureka: false
+    # 不从 eureka 上获取服务的注册信息，因为本身就是一个注册中心
+    fetch-registry: false
+    # private Map<String, String> serviceUrl = new HashMap<>();
+
+    # {
+    #  this.serviceUrl.put(DEFAULT_ZONE, DEFAULT_URL);
+    # }
+
+    # public static final String DEFAULT_URL = "http://localhost:8761" + DEFAULT_PREFIX + "/";
+
+    # public static final String DEFAULT_ZONE = "defaultZone";
+    # 注册中心服务的地址
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
